@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" translate="yes">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Platform for building trust networks through verified interactions" lang="en">
+    <meta name="google" content="notranslate" class="notranslate">
+    <title translate="no">Prototype</title>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .try-demo {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .try-demo:hover {
+            background: #0056b3;
+        }
+
+        .hero {
+            margin-top: 80px;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Changed from auto-fit to fixed 2 columns */
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .metric-card h3 {
+            color: #007bff;
+            margin: 0 0 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .metric-card h3 img {
+            width: 48px;
+            height: 48px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .metric-card h3 img:hover {
+            opacity: 1;
+        }
+
+        .metric-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .warning {
+            color: #dc3545;
+            font-size: 0.9em;
+            margin-top: 8px;
+        }
+
+        .prototype-preview {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .preview-image {
+            width: 350px;
+            height: 687px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .preview-content {
+            max-width: 500px;
+        }
+
+        .features {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .feature-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        footer {
+            background: #1a1a1a;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer .try-demo {
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                margin-top: 60px;
+                padding: 40px 0;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+                padding: 0 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+                padding: 0 20px;
+            }
+
+            .preview-image {
+                width: min(280px, 90vw);
+                height: min(550px, 90vh);
+            }
+
+            .preview-content {
+                padding: 0 20px;
+                text-align: center;
+            }
+
+            .preview-content h2 {
+                font-size: 24px;
+            }
+
+            .preview-content p {
+                font-size: 14px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+
+            .feature-card img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .feature-card h3 {
+                font-size: 18px;
+            }
+
+            .feature-card p {
+                font-size: 14px;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr; /* Single column on mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .preview-image {
+                width: min(260px, 85vw);
+                height: min(511px, 85vh);
+            }
+
+            .header-content {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .try-demo {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+
+        @media (orientation: landscape) and (max-height: 600px) {
+            .hero {
+                margin-top: 60px;
+                padding: 20px 0;
+            }
+
+            .prototype-preview {
+                margin: 30px 0;
+            }
+
+            .preview-image {
+                height: 70vh;
+                width: calc(70vh * (350/687));
+            }
+        }
+
+        .section-spacing {
+            margin: 100px 0;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .overview-section {
+            padding: 60px 0;
+            background: white;
+            margin: 80px 0;
+        }
+
+        .overview-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .metrics-section {
+            padding: 80px 0;
+        }
+
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #007bff;
+            transform: translateX(100%);
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .slide-left {
+            animation: slideLeft 0.5s ease-in-out forwards;
+        }
+
+        @keyframes slideLeft {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0%);
+            }
+        }
+
+        .note-section {
+            background: rgba(0, 0, 0, 0.03);
+            padding: 12px 0;
+            margin: 40px 0 0 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .note-content {
+            font-style: italic;
+            color: #666;
+            font-size: 15px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .metrics-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .metrics-grid {
+            flex: 1;
+            /* existing metrics-grid styles remain */
+        }
+
+        .metrics-preview {
+            flex-shrink: 0;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .metrics-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .metrics-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .metrics-preview {
+                width: 280px;
+                order: -1;
+                margin-bottom: 30px;
+            }
+        }
+
+        .language-switch {
+            background: transparent;
+            border: 1px solid #007bff;
+            color: #007bff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 15px;
+            transition: all 0.3s;
+        }
+
+        .language-switch:hover {
+            background: #007bff;
+            color: white;
+        }
+
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .header-content {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .language-switch {
+            margin-right: 0;
+            margin-left: 15px;
+        }
+
+        [dir="rtl"] h1,
+        [dir="rtl"] h2,
+        [dir="rtl"] h3,
+        [dir="rtl"] .section-title,
+        [dir="rtl"] .try-demo,
+        .language-switch:not([dir="rtl"]) {
+            font-family: 'Almarai', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-transition"></div>
+
+    <header role="banner">
+        <div class="container header-content">
+            <div class="logo-container">
+                <h1 style="font-size: 24px; font-weight: 600; color: #1a1a1a;" translate="no" data-translate="Prototype Guide">Prototype Guide</h1>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <button class="language-switch" onclick="toggleLanguage()">عربي</button>
+                <a href="demo.html" class="try-demo" role="button" aria-label="Try Prototype" data-translate="Try Prototype">Try Prototype</a>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="hero">
+            <div class="container">
+                <h1 data-translate="Fostering Digital Trust">Fostering Digital Trust</h1>
+                <p data-translate="Our platform fosters trust through user verification, eliminating intermediary fraud techniques such as the three-way scam and enhancing individual accountability in the chaos of open markets. Our service helps users interact with verified accounts and provides insights into past interactions and their integrity, empowering more trusted decision-making.">Our platform fosters trust through user verification, eliminating intermediary fraud techniques such as the three-way scam and enhancing individual accountability in the chaos of open markets. Our service helps users interact with verified accounts and provides insights into past interactions and their integrity, empowering more trusted decision-making.</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title" data-translate="Key Features">Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <img src="media/verify.svg" alt="Verification">
+                        <h3 data-translate="Verified Users">Verified Users</h3>
+                        <p data-translate="Help with identity verification to ensure integrity of account holders.">Help with identity verification to ensure integrity of account holders.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="media/interactions.svg" alt="Interactions">
+                        <h3 data-translate="Interaction Management">Interaction Management</h3>
+                        <p data-translate="Seamlessly manage your interactions with other users through our intuitive interface.">Seamlessly manage your interactions with other users through our intuitive interface.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="media/star.svg" alt="Reviews">
+                        <h3 data-translate="Reviews">Reviews</h3>
+                        <p data-translate="Provide and receive reviews to build a strong reputation for your account.">Provide and receive reviews to build a strong reputation for your account.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="media/notification.svg" alt="Notifications">
+                        <h3 data-translate="Real-time Updates">Real-time Updates</h3>
+                        <p data-translate="Stay informed with instant notifications about your interactions and reviews.">Stay informed with instant notifications about your interactions and reviews.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="metrics-section">
+            <div class="container">
+                <h2 class="section-title" data-translate="Interactions Overview">Interactions Overview</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;" data-translate="These key metrics help users make informed decisions about transactions by providing signs that confirm the legitimacy of the transactions recorded on the account.">
+                    These key metrics help users make informed decisions about transactions by providing signs that confirm the legitimacy of the transactions recorded on the account.
+                </p>
+                <div class="metrics-container">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <h3>
+                                <img src="media/total.svg" alt="">
+                                <span data-translate="Total Interactions">Total Interactions</span>
+                            </h3>
+                            <p data-translate="The number of total interactions you've completed on the platform.">The number of total interactions you've completed on the platform.</p>
+                        </div>
+
+                        <div class="metric-card">
+                            <h3>
+                                <img src="media/repeated.svg" alt="">
+                                <span data-translate="Repeated Interactions">Repeated Interactions</span>
+                            </h3>
+                            <p data-translate="Number of users you've interacted with multiple times.">Number of users you've interacted with multiple times.</p>
+                        </div>
+
+                        <div class="metric-card">
+                            <h3>
+                                <img src="media/cross.svg" alt="">
+                                <span data-translate="Cross Invites">Cross Invites</span>
+                            </h3>
+                            <p data-translate="Mutual invitation occurrences that might signal coordinated behavior patterns.">Mutual invitation occurrences that might signal coordinated behavior patterns.</p>
+                        </div>
+
+                        <div class="metric-card">
+                            <h3>
+                                <img src="media/reports.svg" alt="">
+                                <span data-translate="Reports">Reports</span>
+                            </h3>
+                            <p data-translate="Number of times this user has been reported by other users.">Number of times this user has been reported by other users.</p>
+                        </div>
+                    </div>
+                    <div class="metrics-preview">
+                        <img src="media/view.jpg" alt="Interaction metrics in the app interface">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="note-section">
+        <div class="container">
+            <p class="note-content" data-translate="Note: This Prototype assumes completed sign-up and verification phases to focus on core functionality. Many features are omitted to maintain fundamental conceptual clarity.">Note: This Prototype assumes completed sign-up and verification phases to focus on core functionality. Many features are omitted to maintain fundamental conceptual clarity.</p>
+        </div>
+    </div>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <a href="demo.html" class="try-demo" role="button" aria-label="Try Prototype" data-translate="Try Prototype">Try Prototype</a>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            ar: {
+                'Try Prototype': 'جرب النموذج',
+                'Fostering Digital Trust': 'تنمية الثقة الرقمية',
+                'Key Features': 'الميزات الرئيسية',
+                'Verified Users': 'مستخدمون موثقون',
+                'Interaction Management': 'إدارة المعاملات',
+                'Reviews': 'المراجعات',
+                'Real-time Updates': 'تحديثات فورية',
+                'Interactions Overview': 'نظرة عامة على المعاملات',
+                'Total Interactions': 'إجمالي المعاملات',
+                'Repeated Interactions': 'المعاملات المتكررة',
+                'Cross Invites': 'الدعوات المتبادلة',
+                'Reports': 'التقارير',
+                // Add content translations
+                'Our platform fosters trust through user verification, eliminating intermediary fraud techniques such as the three-way scam and enhancing individual accountability in the chaos of open markets. Our service helps users interact with verified accounts and provides insights into past interactions and their integrity, empowering more trusted decision-making.': 
+                'منصتنا تنمي الثقة من خلال التحقق من هوية المستخدمين، مما يلغي تقنيات النصب بالوساطة كالنصب بالطريقة الثلاثية، ويعزز حس المسؤولية الفردية في فوضى الأسواق المفتوحة. تتيح خدمتنا للمستخدمين التعامل مع الحسابات الموثقة وتوفر مؤشرات حول التعاملات السابقة ونزاهتها، مما يساهم في اتخاذ قرارات أكثر ثقة.',
+                
+                'Help with identity verification to ensure integrity of account holders.':
+                'المساعدة في التحقق من الهوية لضمان نزاهة أصحاب الحسابات.',
+                
+                'Seamlessly manage your interactions with other users through our intuitive interface.':
+                'إدارة معاملاتك مع المستخدمين الآخرين بسلاسة من خلال واجهتنا.',
+                
+                'Provide and receive reviews to build a strong reputation for your account.':
+                'قدّم واستقبل مراجعات لبناء سمعة قوية لحسابك.',
+                
+                'Stay informed with instant notifications about your interactions and reviews.':
+                'ابق على اطلاع من خلال الإشعارات الفورية حول معاملاتك والمراجعات.',
+                
+                'These key metrics help users make informed decisions about transactions by providing signs that confirm the legitimacy of the transactions recorded on the account.':
+                'تساعد هذه المقاييس الرئيسية المستخدمين على اتخاذ قرارات واعية بشأن المعاملات من خلال توفير مؤشرات تضفي مصداقية على شرعية المعاملات المسجلة على الحساب.',
+                
+                'The number of total interactions you\'ve completed on the platform.':
+                'عدد المعاملات الإجمالية التي أكملتها على المنصة.',
+
+                'Number of users you\'ve interacted with multiple times.':
+                'عدد المستخدمين الذين تعاملت معهم عدة مرات.',
+                
+                'Mutual invitation occurrences that might signal coordinated behavior patterns.':
+                'حالات الدعوة المتبادلة التي قد تشير إلى أنماط السلوك المنسق.',
+                
+                'Number of times this user has been reported by other users.':
+                'عدد المرات التي تم فيها الإبلاغ عن هذا المستخدم من قبل الآخرين.',
+                
+                'Note: This Prototype assumes completed sign-up and verification phases to focus on core functionality. Many features are omitted to maintain fundamental conceptual clarity.':
+                'ملاحظة: يفترض هذا النموذج الأولي اكتمال مراحل التسجيل والتحقق للتركيز على الوظائف الأساسية. تم حذف العديد من الميزات للحفاظ على وضوح المفاهيم الأساسية.'
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            const newLang = currentLang === 'en' ? 'ar' : 'en';
+            const direction = newLang === 'ar' ? 'rtl' : 'ltr';
+            const buttonText = newLang === 'ar' ? 'English' : 'عربي';
+            
+            document.documentElement.setAttribute('lang', newLang);
+            document.documentElement.setAttribute('dir', direction);
+            document.querySelector('.language-switch').textContent = buttonText;
+
+            if (newLang === 'ar') {
+                document.querySelectorAll('[data-translate]').forEach(element => {
+                    const key = element.getAttribute('data-translate');
+                    if (translations.ar[key]) {
+                        element.textContent = translations.ar[key];
+                    }
+                });
+            } else {
+                document.querySelectorAll('[data-translate]').forEach(element => {
+                    element.textContent = element.getAttribute('data-translate');
+                });
+            }
+
+            currentLang = newLang;
+        }
+
+        // Add data-translate attributes to elements that need translation
+        document.addEventListener('DOMContentLoaded', function() {
+            const translatableElements = document.querySelectorAll('h1, h2, h3, p:not(.note-content), a.try-demo');
+            translatableElements.forEach(element => {
+                const text = element.textContent.trim();
+                element.setAttribute('data-translate', text);
+            });
+        });
+
+        document.querySelector('.try-demo').addEventListener('click', function(e) {
+            e.preventDefault();
+            const transition = document.querySelector('.page-transition');
+            transition.classList.add('slide-left');
+            
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 500);
+        });
+    </script>
+</body>
+</html>

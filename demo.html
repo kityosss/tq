@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Use the device-width for responsive scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-frame">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <img src="media/return.svg" alt="Return" id="return-icon" class="return-icon" />
+        <span class="top-bar-title" id="top-bar-title">My Profile</span>
+      </div>
+    </div>
+    
+    <!-- Profile Header -->
+    <header id="profile-header">
+      <div class="profile-pic">
+        <img src="media/man2.svg" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <h1 class="username">
+        Username
+        <div class="tooltip-container">
+          <img src="media/verify.svg" alt="Verified" class="verify-icon-main">
+          <div class="tooltip">Verified Member</div>
+        </div>
+      </h1>
+      <div id="socials-link">Socials</div>
+      <p class="joined-date">Joined on Nov, 2024.</p>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+      <!-- Default View (My Profile) -->
+      <div id="default-view" class="visible">
+        <h2 class="section-title">Interactions Overview</h2>
+        <div class="interactions-overview">
+          <div class="interaction-box" data-tooltip="Total Interactions">5</div>
+          <div class="interaction-box" data-tooltip="Repeated Interactions">0</div>
+          <div class="interaction-box" data-tooltip="Cross Invite Interactions">0</div>
+          <div class="interaction-box" data-tooltip="Reports">0</div>
+        </div>
+        <h2 class="section-title">Reviews</h2>
+        <div class="reviews-list">
+          <!-- Example Reviews with proper gender ratio and Arabic/French mix -->
+          <div class="review-card">
+            <div class="review-pic">
+              <img src="media/woman1.svg" alt="Profile">
+            </div>
+            <div class="review-details">
+              <div class="review-username">
+                Yasmine
+                <img src="media/verify.svg" alt="Verified" style="width:14px;height:14px;" />
+              </div>
+              <div class="star-container">
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+              </div>
+              <p class="review-text">تعامل راقي ومحترم جداً</p>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-pic">
+              <img src="media/man2.svg" alt="Profile">
+            </div>
+            <div class="review-details">
+              <div class="review-username">
+                Mohammed
+                <img src="media/verify.svg" alt="Verified" style="width:14px;height:14px;" />
+              </div>
+              <div class="star-container">
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+              </div>
+              <p class="review-text">تعامل ممتاز وسريع جداً</p>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-pic">
+              <img src="media/woman2.svg" alt="Profile">
+            </div>
+            <div class="review-details">
+              <div class="review-username">
+                Amira
+                <img src="media/verify.svg" alt="Verified" style="width:14px;height:14px;" />
+              </div>
+              <div class="star-container">
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" style="opacity:0.3;" />
+              </div>
+              <p class="review-text">Très rapide et professionnel</p>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-pic">
+              <img src="media/man1.svg" alt="Profile">
+            </div>
+            <div class="review-details">
+              <div class="review-username">
+                Hassan
+              </div>
+              <div class="star-container">
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+              </div>
+              <p class="review-text">موثوق جداً، أنصح بالتعامل معه</p>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-pic">
+              <img src="media/woman1.svg" alt="Profile">
+            </div>
+            <div class="review-details">
+              <div class="review-username">
+                Leila
+                <img src="media/verify.svg" alt="Verified" style="width:14px;height:14px;" />
+              </div>
+              <div class="star-container">
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+                <img src="media/star.svg" alt="Star" class="star-icon" />
+              </div>
+              <p class="review-text">Interaction parfaite, merci!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Socials View -->
+      <div id="socials-view" class="hidden">
+        <ul class="social-links-list">
+          <li class="social-link-item">
+            <img src="media/facebook.svg" alt="Facebook" class="social-icon" />
+            <a href="https://facebook.com/username" target="_blank">facebook.com/username</a>
+          </li>
+          <li class="social-link-item">
+            <img src="media/instagram.svg" alt="Instagram" class="social-icon" />
+            <a href="https://instagram.com/username" target="_blank">instagram.com/username</a>
+          </li>
+          <li class="social-link-item">
+            <img src="media/x.svg" alt="X" class="social-icon" />
+            <a href="https://x.com/username" target="_blank">x.com/username</a>
+          </li>
+          <li class="social-link-item">
+            <img src="media/whatsapp.svg" alt="WhatsApp" class="social-icon" />
+            <a href="https://wa.me/username" target="_blank">wa.me/username</a>
+          </li>
+          <li class="social-link-item">
+            <img src="media/tiktok.svg" alt="TikTok" class="social-icon" />
+            <a href="https://tiktok.com/@username" target="_blank">tiktok.com/@username</a>
+          </li>
+          <li class="social-link-item">
+            <img src="media/telegram.svg" alt="Telegram" class="social-icon" />
+            <a href="https://t.me/username" target="_blank">t.me/username</a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Interactions View -->
+      <div id="interactions-view" class="hidden">
+        <h2 class="section-title"></h2>
+        <div class="tabs" id="interactions-tabs">
+          <div id="interactions-active-tab" class="tab active">
+            Active <span id="interactions-active-notification" class="notification" style="display: none;"></span>
+          </div>
+          <div id="interactions-history-tab" class="tab">
+            History <span id="history-notification" class="notification" style="display: none;"></span>
+          </div>
+        </div>
+        <div id="interactions-active-content" class="tab-content visible">
+          <div id="active-interactions-list">
+            <p>No active interactions yet.</p>
+          </div>
+        </div>
+        <div id="interactions-history-content" class="tab-content">
+          <p>No history interactions yet.</p>
+        </div>
+      </div>
+      
+      <!-- Invitations View -->
+      <div id="invitations-view" class="hidden">
+        <h2 class="section-title"></h2>
+        <div class="tabs" id="invitations-tabs">
+          <div id="invitations-invite-tab" class="tab active">Invite</div>
+          <div id="invitations-request-tab" class="tab">Request</div>
+        </div>
+        <div id="invitations-invite-content" class="tab-content visible">
+          <h3 style="color: #666; font-size: 14px; margin-bottom: 15px; text-align: center;">
+            Generate an invitation code
+          </h3>
+          <div class="invitation-action">
+            <input type="text" id="generated-code-input" readonly placeholder="Code will appear here">
+            <button id="generate-code-btn">Generate Code</button>
+          </div>
+        </div>
+        <div id="invitations-request-content" class="tab-content">
+          <h3 style="color: #666; font-size: 14px; margin-bottom: 15px; text-align: center;">
+            Please enter your invitation code
+          </h3>
+          <div class="invitation-action">
+            <input type="text" id="request-code-input" placeholder="Enter code">
+            <button id="submit-code-btn">Submit Code</button>
+          </div>
+        </div>
+        <!-- Container for Pending Evaluations -->
+        <div id="pending-evaluation-container"></div>
+      </div>
+      
+      <!-- Evaluation Section (instead of Modal) -->
+      <div id="evaluation-section" class="evaluation-section hidden">
+        <div class="evaluation-header">
+          <span class="return-arrow" id="evaluation-return-arrow">←</span>
+          <h2>User Details</h2>
+        </div>
+
+        <!-- Action Buttons at Top -->
+        <div class="evaluation-buttons">
+          <button id="create-interaction-btn" class="btn-green">Create Interaction</button>
+          <button id="delete-interaction-btn" class="btn-grey">Delete</button>
+        </div>
+        
+        <!-- Profile Header (Mirror of main profile) -->
+        <header class="profile-header">
+          <div class="profile-pic">
+            <img src="media/man2.svg" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h1 class="username">
+            <span id="evaluation-username">RandomUser123</span>
+            <img src="media/verify.svg" alt="Verified" class="verify-icon-main" style="width:16px;height:16px;">
+          </h1>
+          <div class="profile-socials">Socials</div>
+          <p class="joined-date">Joined on Mar, 2024</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="evaluation-content">
+          <!-- Socials Section (Initially Hidden) -->
+          <div class="evaluation-socials hidden">
+            <ul class="social-links-list">
+              <!-- ...existing social links... -->
+            </ul>
+          </div>
+
+          <h2 class="section-title">Interactions Overview</h2>
+          <div class="interactions-overview">
+            <div class="interaction-box" data-tooltip="Total Interactions">
+              <span class="stat-number">0</span>
+            </div>
+            <div class="interaction-box" data-tooltip="Repeated Interactions">
+              <span class="stat-number">0</span>
+            </div>
+            <div class="interaction-box" data-tooltip="Cross Invite Interactions">
+              <span class="stat-number">0</span>
+            </div>
+            <div class="interaction-box" data-tooltip="Reports">
+              <span class="stat-number">0</span>
+            </div>
+          </div>
+
+          <h2 class="section-title">Reviews</h2>
+          <div class="reviews-list">
+            <!-- Reviews will be populated dynamically -->
+          </div>
+        </div>
+      </div>
+      
+      <!-- Interaction Action View -->
+      <div id="interaction-action-view" class="evaluation-section hidden">
+        <div class="evaluation-header">
+          <span class="return-arrow" id="interaction-return-arrow">←</span>
+          <h2>Manage Interaction</h2>
+        </div>
+        <div class="evaluation-content">
+          <div class="evaluation-profile">
+            <div class="profile-placeholder">
+              <img src="media/man2.svg" alt="Profile">
+            </div>
+            <span id="interaction-username">Username</span>
+            <img src="media/verify.svg" alt="Verified" class="verify-icon-main" style="width:16px;height:16px;">
+          </div>
+        </div>
+        <div class="evaluation-buttons">
+          <button id="action-complete-btn" class="btn-green">Complete</button>
+          <button id="action-cancel-btn" class="btn-grey">Cancel</button>
+          <button id="action-report-btn" class="btn-red">Report</button>
+        </div>
+      </div>
+      
+      <!-- Review View -->
+      <div id="review-view" class="evaluation-section hidden">
+        <div class="evaluation-header">
+          <span class="return-arrow" id="review-return-arrow">←</span>
+          <h2>Add Review</h2>
+        </div>
+        
+        <div class="review-view-content">
+          <div class="evaluation-profile">
+            <div class="profile-placeholder">
+              <img src="media/man2.svg" alt="Profile">
+            </div>
+            <span id="review-username">Username</span>
+            <img src="media/verify.svg" alt="Verified" class="verify-icon-main" style="width:14px;height:14px;">
+          </div>
+          
+          <div class="review-form">
+            <div class="star-rating">
+              <img src="media/star.svg" alt="Star" class="star-select" data-rating="1">
+              <img src="media/star.svg" alt="Star" class="star-select" data-rating="2">
+              <img src="media/star.svg" alt="Star" class="star-select" data-rating="3">
+              <img src="media/star.svg" alt="Star" class="star-select" data-rating="4">
+              <img src="media/star.svg" alt="Star" class="star-select" data-rating="5">
+            </div>
+            <textarea id="review-text" placeholder="Write your review here..." rows="3"></textarea>
+          </div>
+        </div>
+      
+        <div class="evaluation-buttons">
+          <button id="submit-review-btn" class="btn-green">Submit Review</button>
+        </div>
+      </div>
+      
+      <!-- Notifications View -->
+      <div id="notifications-view" class="hidden">
+        <h2 class="section-title"></h2>
+        <div class="notifications-list">
+          <div class="empty-notifications">
+            <img src="media/notification.svg" alt="No notifications">
+            <p>No notifications yet</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Report View -->
+      <div id="report-view" class="evaluation-section hidden">
+        <div class="evaluation-header">
+          <span class="return-arrow" id="report-return-arrow">←</span>
+          <h2>Report</h2>
+        </div>
+        <div class="evaluation-content">
+          <div class="evaluation-profile">
+            <div class="profile-placeholder">
+              <img src="media/man2.svg" alt="Profile">
+            </div>
+            <span id="report-username">Username</span>
+            <img src="media/verify.svg" alt="Verified" class="verify-icon-main" style="width:16px;height:16px;">
+          </div>
+          <div class="report-buttons">
+            <button id="confirm-report" class="btn-red">Confirm Report</button>
+            <button id="cancel-report" class="btn-grey">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <!-- Bottom Navigation -->
+    <nav>
+      <div style="position: relative;">
+        <img src="media/profile.svg" alt="Profile" class="nav-icon" id="nav-profile"/>
+        <span id="profile-notification" class="notification" style="display: none;"></span>
+      </div>
+      <img src="media/invitations.svg" alt="Invitations" class="nav-icon" id="nav-invitations"/>
+      <div style="position: relative;">
+        <img src="media/interactions.svg" alt="Interactions" class="nav-icon" id="nav-interactions"/>
+        <span id="interactions-notification" class="notification" style="display: none;"></span>
+      </div>
+      <div style="position: relative;">
+        <img src="media/notification.svg" alt="Notifications" class="nav-icon" id="nav-notifications"/>
+        <span id="notifications-count" class="notification" style="display: none;"></span>
+      </div>
+    </nav>
+  </div>
+  
+  <a href="index.html" class="floating-guide">
+    <img src="media/guide.svg" alt="" style="width: 16px; height: 16px; filter: invert(1);">
+    Guide
+  </a>
+  <script src="app.js"></script>
+</body>
+</html>
